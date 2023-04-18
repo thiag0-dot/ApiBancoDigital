@@ -2,7 +2,7 @@
     define('BASEDIR', dirname(__FILE__, 2));
     define('VIEWS', BASEDIR . '/View/modules/');
 
-    $_ENV['db']['host'] = "192.168.1.1";
-    $_ENV['db']['user'] = "codeflame";
-    $_ENV['db']['pass'] = "codeflamepw";
-    $_ENV['db']['dbname'] = "codeflamedb";
+    $_ENV['db']['host'] = "localhost:3307";
+    $_ENV['db']['user'] = "etecjau";
+    $_ENV['db']['pass'] = "root";
+    $_ENV['db']['dbname'] = "bancodigital";

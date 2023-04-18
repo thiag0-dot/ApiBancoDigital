@@ -1,18 +1,41 @@
 <?php
 use App\Controller\{
-    WelcomeController
+    ChavePixController,
+    ContaController,
+    CorrentistaController,
+    TransacaoController,
+    Controller
 };
 
 $parse_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-switch($parse_uri) {
+switch($parse_uri)
+{
+    case "/correntista/save":
+        CorrentistaController::save();
+    break;
 
+    case "/correntista/deletar":
+        CorrentistaController::delete();
+    break;
     
-    case "/welcome":
-        WelcomeController::index();
+    case "/correntista/entrar":
+        
+    break;
+
+    case "/conta/pix/enviar":
+
+    break;
+
+    case "/conta/pix/receber":
+
+    break;
+
+    case "/conta/extrato":
+        ContaController::select();
     break;
 
     default:
-        header("Location: /welcome");
+        http_response_code(403);
     break;
 }
