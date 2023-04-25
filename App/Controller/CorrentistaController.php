@@ -13,7 +13,7 @@ class CorrentistaController extends Controller {
 			$json_obj = json_decode(file_get_contents('php://input'));
 
 			$model = new CorrentistaModel();
-			$model->id = $json_obj->idCorrentista;
+			//$model->id = $json_obj->idCorrentista;
 			$model->nome = $json_obj->Nome;
 			$model->cpf = $json_obj->Cpf;
 			$model->data_nasc = $json_obj->Data_Nasc;
@@ -23,6 +23,7 @@ class CorrentistaController extends Controller {
 		}
 		catch (Exception $e)
 		{
+			parent::LogError($e);
 			parent::getExceptionAsJSON($e);
 		}
 	}
