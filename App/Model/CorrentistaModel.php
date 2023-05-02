@@ -27,4 +27,16 @@ class CorrentistaModel extends Model {
 	{
 		(new CorrentistaDAO())->delete($this->id);
 	}
+
+	public function autenticar()
+	{
+		$dao = new CorrentistaDAO();
+
+		$dados_usuario_logado =  $dao->selectByCpfAndSenha($this->cpf, $this->senha);
+
+		if(is_object($dados_usuario_logado))
+            return $dados_usuario_logado;
+        else
+            null;
+	}
 }

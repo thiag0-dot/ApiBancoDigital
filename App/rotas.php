@@ -20,7 +20,7 @@ switch($parse_uri)
     break;
     
     case "/correntista/entrar":
-        
+        CorrentistaController::auth();
     break;
 
     case "/conta/pix/enviar":
