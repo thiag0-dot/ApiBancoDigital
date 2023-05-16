@@ -2,6 +2,7 @@
 namespace App\Model;
 
 use App\DAO\CorrentistaDAO;
+use Exception;
 
 class CorrentistaModel extends Model {
 	public $id, $nome, $cpf, $data_nasc, $senha;
@@ -28,15 +29,15 @@ class CorrentistaModel extends Model {
 		(new CorrentistaDAO())->delete($this->id);
 	}
 
-	public function autenticar()
+	public function logar()
 	{
-		$dao = new CorrentistaDAO();
-
-		$dados_usuario_logado =  $dao->selectByCpfAndSenha($this->cpf, $this->senha);
-
-		if(is_object($dados_usuario_logado))
-            return $dados_usuario_logado;
-        else
-            null;
+		try
+		{
+			return (new CorrentistaDAO())->selectByCpfAndSenha($this->cpf, $this->senha);
+		}
+		catch(Exception $e)
+		{
+			throw $e;
+		}
 	}
 }

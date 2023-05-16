@@ -58,6 +58,6 @@ class CorrentistaDAO extends DAO {
         $stmt->bindValue(2, $senha);
         $stmt->execute();
 
-        return $stmt->fetchObject("Api\Model\CorrentistaModel");
+        return $stmt->fetchObject("App\Model\CorrentistaModel");
     }
 }
