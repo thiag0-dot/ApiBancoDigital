@@ -14,15 +14,16 @@ class ContaDAO extends DAO {
     public function insert(ContaModel $model) : ?ContaModel 
     {
         $sql = "INSERT INTO conta 
-                            (idCorrentista, saldo, limite, tipo) 
+                            (idCorrentista, saldo, tipo,data_abertura, limite) 
                 VALUES 
-                            (?, ?, ?, ?) ";
+                            (?, ?, ?, CURRENT_DATE(), ?) ";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $model->idcorrentista);
         $stmt->bindValue(2, $model->saldo);
-        $stmt->bindValue(3, $model->limite);
-        $stmt->bindValue(4, $model->tipo);
+        $stmt->bindValue(3, $model->tipo);
+        $stmt->bindValue(4, $model->limite);
+        
         
         $stmt->execute();
 

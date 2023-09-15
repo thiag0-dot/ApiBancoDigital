@@ -1,6 +1,6 @@
-#0 D:\ApiBancoDigital\App\DAO\ContaDAO.php(28): PDOStatement->execute()
-#1 D:\ApiBancoDigital\App\Model\CorrentistaModel.php(30): App\DAO\ContaDAO->insert(Object(App\Model\ContaModel))
-#2 D:\ApiBancoDigital\App\Controller\CorrentistaController.php(23): App\Model\CorrentistaModel->save()
-#3 D:\ApiBancoDigital\App\rotas.php(15): App\Controller\CorrentistaController::save()
-#4 D:\ApiBancoDigital\App\index.php(6): include('D:\\ApiBancoDigi...')
+#0 C:\Users\Usuario\Desktop\ApiBancoDigital\App\DAO\ContaDAO.php(29): PDOStatement->execute()
+#1 C:\Users\Usuario\Desktop\ApiBancoDigital\App\Model\CorrentistaModel.php(30): App\DAO\ContaDAO->insert(Object(App\Model\ContaModel))
+#2 C:\Users\Usuario\Desktop\ApiBancoDigital\App\Controller\CorrentistaController.php(23): App\Model\CorrentistaModel->save()
+#3 C:\Users\Usuario\Desktop\ApiBancoDigital\App\rotas.php(15): App\Controller\CorrentistaController::save()
+#4 C:\Users\Usuario\Desktop\ApiBancoDigital\App\index.php(6): include('C:\\Users\\Usuari...')
 #5 {main}
