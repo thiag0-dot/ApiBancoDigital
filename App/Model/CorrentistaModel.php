@@ -22,7 +22,7 @@ class CorrentistaModel extends Model {
 
 			// Abrindo a conta corrente junto a conta
 			$conta_corrente = new ContaModel();
-			$conta_corrente->idcorrentista = $model_preenchido->id;
+			$conta_corrente->id_correntista = $model_preenchido->id;
 			$conta_corrente->saldo = 0;
 			$conta_corrente->limite = 100;
 			$conta_corrente->tipo = 'C';
@@ -33,7 +33,7 @@ class CorrentistaModel extends Model {
 
 			//abrindo a conta poupança
 			$conta_poupanca = new ContaModel();
-            $conta_poupanca->idcorrentista = $model_preenchido->id;
+            $conta_poupanca->id_correntista = $model_preenchido->id;
             $conta_poupanca->saldo = 0;
             $conta_poupanca->limite = 100;
             $conta_poupanca->tipo = 'P';

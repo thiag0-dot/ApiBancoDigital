@@ -19,7 +19,7 @@ class ContaDAO extends DAO {
                             (?, ?, ?, CURRENT_DATE(), ?) ";
 
         $stmt = $this->conexao->prepare($sql);
-        $stmt->bindValue(1, $model->idcorrentista);
+        $stmt->bindValue(1, $model->id_correntista);
         $stmt->bindValue(2, $model->saldo);
         $stmt->bindValue(3, $model->tipo);
         $stmt->bindValue(4, $model->limite);
@@ -36,12 +36,12 @@ class ContaDAO extends DAO {
     {
     }
 
-    public function select(int $id_cidadao) 
+    public function select(ContaModel $model) 
     {
-        $sql = "SELECT * FROM Reclamacao WHERE id_cidadao = ? ";
+        $sql = "SELECT * FROM conta WHERE idCorrentista = ? ";
 
         $stmt = $this->conexao->prepare($sql);
-        $stmt->bindValue(1, $id_cidadao);
+        $stmt->bindValue(1, $model->id_correntista);
         $stmt->execute();
 
         

@@ -4,7 +4,7 @@ namespace App\Model;
 use App\DAO\ContaDAO;
 
 class ContaModel extends Model {
-	public $id, $idcorrentista, $saldo, $limite, $tipo;
+	public $id, $id_correntista, $saldo, $limite, $tipo;
 
 	public function save() 
 	{
@@ -18,19 +18,14 @@ class ContaModel extends Model {
 		}
 	}
 
-	public function getAllRows(int $id_cidadao) 
+	public function getByIdCorrentista() 
 	{
 		$dao = new ContaDAO();
 
-		$this->rows = $dao->select($id_cidadao);
+		$this->rows = $dao->select($this);
 	}
 
 	public function delete(int $id) 
-	{
-
-	}
-
-	public function getById(int $id) 
 	{
 
 	}

@@ -23,8 +23,8 @@ switch($parse_uri)
         CorrentistaController::getCorrentistabyCpfAndSenha();
     break;
 
-    case "/conta/pix/enviar":
-
+    case "/conta/by-correntista":
+        ContaController::select();
     break;
 
     case "/conta/pix/receber":
